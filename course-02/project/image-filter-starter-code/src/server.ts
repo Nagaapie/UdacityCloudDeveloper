@@ -29,8 +29,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
 
   /**************************************************************************** */
 
-  app.get("/filteredimage", async (req, res) => {
-  
+  app.get('/filteredimage', function(req:express.Request, res:express.Response)  {
     var imgurl = req.query.image_url;
     //1. validate the image_url query
     if (!imgurl) {
@@ -56,25 +55,6 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
         }
         );
     }
-    //  let files: string[] = [];
-  //  const image_url = req.query.image_url;
-
-//    // check if url is valid
-//    if(!image_url){
-//      return res.status(422).send({ message: 'Image url is required' });
-//    }
-
- //   // filter the image
- //   const filtered_path = await filterImageFromURL(image_url);
-
-//    // send file in the response
-//    res.status(200).sendFile(filtered_path);
-
- //   // delete files after response finishes
- //   res.on('finish', function() {
- //     files.push(filtered_path);
- //     deleteLocalFiles(files);
- //   }) ;
   });
 
   /**************************************************************************** */
